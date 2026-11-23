@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahindra XUV 3XO | VIP Delivery for Wayne Lockem</title>
+    <!-- Tailwind CSS for responsive layout and utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Rajdhani for futuristic automotive display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for automotive animations, neon glows, and scene physics */
+        :root {
+            --mahindra-red: #e31837;
+            --led-cyan: #38bdf8;
+            --led-white: #f8fafc;
+            --asphalt: #090d16;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--asphalt);
+            color: #f8fafc;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .font-display {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        /* Ambient Showroom Spotlight Beams */
+        .spotlight-beam {
+            position: absolute;
+            top: -20%;
+            width: 35vw;
+            height: 140vh;
+            background: linear-gradient(180deg, rgba(227, 24, 55, 0.14) 0%, rgba(56, 189, 248, 0.05) 50%, rgba(9, 13, 22, 0) 90%);
+            transform-origin: top center;
+            pointer-events: none;
+            filter: blur(28px);
+            z-index: 1;
+        }
+
+        .beam-left {
+            left: 10%;
+            transform: rotate(-18deg);
+            animation: swayLeft 8s ease-in-out infinite alternate;
+        }
+
+        .beam-right {
+            right: 10%;
+            transform: rotate(18deg);
+            animation: swayRight 9s ease-in-out infinite alternate;
+        }
+
+        @keyframes swayLeft {
+            0% { transform: rotate(-22deg) scaleX(0.95); opacity: 0.6; }
+            100% { transform: rotate(-12deg) scaleX(1.1); opacity: 0.95; }
+        }
+
+        @keyframes swayRight {
+            0% { transform: rotate(12deg) scaleX(1.1); opacity: 0.95; }
+            100% { transform: rotate(22deg) scaleX(0.95); opacity: 0.6; }
+        }
+
+        /* Disco Party Overhead Laser Beams & Floor Glow */
+        .disco-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            overflow: hidden;
+        }
+
+        .disco-container.active {
+            opacity: 1;
+        }
+
+        .disco-beam {
+            position: absolute;
+            top: -15%;
+            width: 24vw;
+            height: 135vh;
+            transform-origin: top center;
+            filter: blur(24px);
+            mix-blend-mode: screen;
+        }
+
+        .disco-cyan {
+            left: 14%;
+            background: linear-gradient(180deg, rgba(56, 189, 248, 0.45) 0%, rgba(56, 189, 248, 0) 85%);
+            animation: discoSweep1 2.4s ease-in-out infinite alternate;
+        }
+
+        .disco-magenta {
+            left: 34%;
+            background: linear-gradient(180deg, rgba(232, 121, 249, 0.45) 0%, rgba(232, 121, 249, 0) 85%);
+            animation: discoSweep2 2.1s ease-in-out infinite alternate;
+        }
+
+        .disco-gold {
+            right: 34%;
+            background: linear-gradient(180deg, rgba(250, 204, 21, 0.42) 0%, rgba(250, 204, 21, 0) 85%);
+            animation: discoSweep3 2.6s ease-in-out infinite alternate;
+        }
+
+        .disco-green {
+            right: 14%;
+            background: linear-gradient(180deg, rgba(52, 211, 153, 0.42) 0%, rgba(52, 211, 153, 0) 85%);
+            animation: discoSweep4 2.2s ease-in-out infinite alternate;
+        }
+
+        .disco-floor-reflection {
+            position: absolute;
+            bottom: 4%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 82vw;
+            height: 140px;
+            border-radius: 9999px;
+            filter: blur(36px);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 6;
+            transition: opacity 0.6s ease;
+        }
+
+        .disco-floor-reflection.active {
+            opacity: 0.55;
+            animation: floorHueCycle 3.5s linear infinite;
+        }
+
+        @keyframes discoSweep1 {
+            0% { transform: rotate(-28deg) scaleX(0.9); }
+            100% { transform: rotate(22deg) scaleX(1.2); }
+        }
+
+        @keyframes discoSweep2 {
+            0% { transform: rotate(24deg) scaleX(1.15); }
+            100% { transform: rotate(-25deg) scaleX(0.85); }
+        }
+
+        @keyframes discoSweep3 {
+            0% { transform: rotate(-20deg) scaleX(1.1); }
+            100% { transform: rotate(28deg) scaleX(0.9); }
+        }
+
+        @keyframes discoSweep4 {
+            0% { transform: rotate(30deg) scaleX(0.95); }
+            100% { transform: rotate(-22deg) scaleX(1.15); }
+        }
+
+        @keyframes floorHueCycle {
+            0% { background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.7), transparent 72%); }
+            25% { background: radial-gradient(ellipse at center, rgba(232, 121, 249, 0.7), transparent 72%); }
+            50% { background: radial-gradient(ellipse at center, rgba(250, 204, 21, 0.65), transparent 72%); }
+            75% { background: radial-gradient(ellipse at center, rgba(52, 211, 153, 0.7), transparent 72%); }
+            100% { background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.7), transparent 72%); }
+        }
+
+        /* Car Drive-In Animation */
+        .car-stage {
+            transition: transform 2.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-130vw);
+            will-change: transform;
+        }
+
+        .car-stage.arrived {
+            transform: translateX(0);
+        }
+
+        /* Subtle engine idle vibration once parked */
+        .car-body-idle {
+            animation: engineIdle 2.2s ease-in-out infinite;
+        }
+
+        @keyframes engineIdle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-2.5px); }
+        }
+
+        /* Wheel Spin during entry */
+        .wheel-group {
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+
+        .spinning {
+            animation: spinWheel 0.45s linear infinite;
+        }
+
+        @keyframes spinWheel {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Signature C-Shaped LED DRL & Headlight Glow */
+        .led-drl {
+            opacity: 0.35;
+            transition: opacity 0.2s ease, filter 0.2s ease;
+        }
+
+        .led-active {
+            opacity: 1 !important;
+            filter: drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 22px #38bdf8) drop-shadow(0 0 35px #0284c7);
+        }
+
+        /* Headlight Beam Cone Projection */
+        .headlight-cone {
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            pointer-events: none;
+        }
+
+        .headlight-cone.beam-on {
+            opacity: 0.85;
+        }
+
+        /* Red Twin Peaks Emblem Glow */
+        .emblem-glow {
+            filter: drop-shadow(0 0 8px rgba(227, 24, 55, 0.85));
+        }
+
+        /* Speech Bubble Entrance & Floating */
+        .speech-card {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .speech-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Soundwave Equalizer Bars when Car Speaks */
+        .eq-bar {
+            width: 4px;
+            height: 8px;
+            background: var(--mahindra-red);
+            border-radius: 9999px;
+            transition: height 0.15s ease;
+        }
+
+        .speaking .eq-bar:nth-child(1) { animation: eqBounce 0.5s ease-in-out infinite 0.0s; }
+        .speaking .eq-bar:nth-child(2) { animation: eqBounce 0.5s ease-in-out infinite 0.15s; }
+        .speaking .eq-bar:nth-child(3) { animation: eqBounce 0.5s ease-in-out infinite 0.3s; }
+        .speaking .eq-bar:nth-child(4) { animation: eqBounce 0.5s ease-in-out infinite 0.1s; }
+        .speaking .eq-bar:nth-child(5) { animation: eqBounce 0.5s ease-in-out infinite 0.25s; }
+
+        @keyframes eqBounce {
+            0%, 100% { height: 6px; background: #e31837; }
+            50% { height: 24px; background: #38bdf8; }
+        }
+
+        /* Confetti Canvas */
+        #confettiCanvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 40;
+        }
+
+        /* Road Grid Reflection */
+        .showroom-floor {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(2, 6, 23, 1) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.85);
+        }
+
+        /* VIP Ready-To-Play Start Curtain */
+        .start-overlay {
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .start-overlay.hidden-overlay {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative selection:bg-rose-600 selection:text-white">
+
+    <!-- VIP Showroom Start Curtain (Waits until customer is ready) -->
+    <div id="startOverlay" class="start-overlay fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-xl flex flex-col items-center justify-center p-6 text-center">
+        <div class="max-w-md w-full bg-slate-900/90 border border-slate-700/80 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+            <div class="absolute -inset-px rounded-3xl bg-gradient-to-tr from-rose-600/25 via-transparent to-sky-500/25 pointer-events-none"></div>
+            
+            <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center shadow-lg">
+                <svg class="w-10 h-7 emblem-glow" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 48L28 14L44 36L50 28L56 36L72 14L90 48H76L68 32L50 52L32 32L24 48H10Z" fill="#E31837"/>
+                </svg>
+            </div>
+
+            <span class="text-xs uppercase tracking-[0.25em] text-rose-400 font-bold block mb-1">VIP Showroom Reveal</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-wide mb-2">MAHINDRA XUV 3XO</h2>
+            <p class="text-slate-300 text-sm sm:text-base mb-7">
+                Prepared exclusively for <span class="text-white font-semibold">Wayne Lockem</span> &amp; Family. Press Play when the customer is ready!
+            </p>
+
+            <button id="startShowBtn" type="button" class="w-full inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-rose-600 hover:from-rose-500 hover:to-rose-400 active:scale-95 text-white font-bold text-lg shadow-xl shadow-rose-600/35 transition-all cursor-pointer">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <span>PLAY DELIVERY REVEAL</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Celebratory Confetti & Sparkle Overlay -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Ambient Showroom Lighting -->
+    <div class="spotlight-beam beam-left"></div>
+    <div class="spotlight-beam beam-right"></div>
+
+    <!-- Celebratory Disco Party Lights & Floor Reflection -->
+    <div id="discoContainer" class="disco-container">
+        <div class="disco-beam disco-cyan"></div>
+        <div class="disco-beam disco-magenta"></div>
+        <div class="disco-beam disco-gold"></div>
+        <div class="disco-beam disco-green"></div>
+    </div>
+    <div id="discoFloorReflection" class="disco-floor-reflection"></div>
+
+    <!-- Top Showroom Header -->
+    <header class="relative z-20 w-full max-w-6xl mx-auto px-4 sm:px-8 pt-6 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+            <!-- Stylized Twin Peaks Emblem Badge -->
+            <div class="w-10 h-10 rounded-xl bg-slate-900/90 border border-slate-700/80 flex items-center justify-center shadow-lg">
+                <svg class="w-7 h-5 emblem-glow" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 48L28 14L44 36L50 28L56 36L72 14L90 48H76L68 32L50 52L32 32L24 48H10Z" fill="#E31837"/>
+                </svg>
+            </div>
+            <div>
+                <span class="text-xs uppercase tracking-[0.25em] text-rose-500 font-semibold block">Official Delivery Experience</span>
+                <h1 class="font-display text-xl sm:text-2xl font-bold tracking-wider text-white">MAHINDRA <span class="text-rose-500">XUV 3XO</span></h1>
+            </div>
+        </div>
+
+        <!-- Audio / Voice Status Pill -->
+        <div class="flex items-center gap-3 bg-slate-900/80 backdrop-blur-md border border-slate-800 px-4 py-2 rounded-full shadow-lg">
+            <span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+            <span id="statusText" class="text-xs sm:text-sm text-slate-300 font-medium">Standing By for Customer...</span>
+        </div>
+    </header>
+
+    <!-- Main Center Stage -->
+    <main class="relative z-20 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 my-4">
+        
+        <!-- Interactive Car Greeting Bubble (Appears after drive-in) -->
+        <div id="speechCard" class="speech-card w-full max-w-2xl bg-slate-900/85 backdrop-blur-xl border border-slate-700/70 rounded-3xl p-5 sm:p-7 shadow-2xl mb-6 sm:mb-8 relative">
+            <!-- Decorative Glow Border Accent -->
+            <div class="absolute -inset-px rounded-3xl bg-gradient-to-r from-rose-500/30 via-sky-400/20 to-rose-500/30 -z-10 blur-sm"></div>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-3 pb-3 border-b border-slate-800">
+                <div class="flex items-center gap-2.5">
+                    <span class="px-2.5 py-1 rounded-lg bg-rose-600/20 border border-rose-500/40 text-rose-400 text-xs font-bold tracking-wider uppercase">
+                        AI Co-Pilot Online
+                    </span>
+                    <span class="text-xs text-slate-400">VIN • XUV3XO-WL2026</span>
+                </div>
+                <!-- Animated Equalizer -->
+                <div id="voiceEqualizer" class="flex items-center gap-1 h-6 px-2">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+            </div>
+
+            <!-- Typewriter Dialogue Display -->
+            <p id="dialogueText" class="text-lg sm:text-2xl font-semibold text-white leading-relaxed min-h-[3.75rem] flex items-center">
+                <span class="text-slate-400 italic text-base">Engine purring... waiting to introduce itself...</span>
+            </p>
+
+            <!-- Action Controls -->
+            <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <button id="speakBtn" type="button" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 active:scale-95 text-white font-semibold text-sm shadow-lg shadow-rose-600/30 transition-all cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                        </svg>
+                        <span>Hear Greeting Again</span>
+                    </button>
+
+                    <button id="flashLightsBtn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-sky-300 border border-slate-700 font-medium text-sm transition-all cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <span>Flash C-LEDs</span>
+                    </button>
+
+                    <button id="discoPartyBtn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-fuchsia-950/70 hover:bg-fuchsia-900/80 active:scale-95 text-fuchsia-300 border border-fuchsia-500/40 font-medium text-sm shadow-lg shadow-fuchsia-600/20 transition-all cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                        <span id="discoBtnLabel">Disco Party</span>
+                    </button>
+                </div>
+
+                <button id="replaySequenceBtn" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-950/70 hover:bg-slate-800 text-slate-300 border border-slate-800 text-xs sm:text-sm font-medium transition-all cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    <span>Replay Drive-In</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Stylized Mahindra XUV 3XO Vector Illustration Stage -->
+        <div class="w-full max-w-4xl relative flex flex-col items-center justify-center">
+            <div id="carStage" class="car-stage w-full max-w-3xl relative">
+                <div id="carBodyIdle" class="w-full relative">
+                    <!-- Custom Detailed SVG of Mahindra XUV 3XO (3/4 Front-Side Dynamic Profile) -->
+                    <svg viewBox="0 0 920 380" class="w-full h-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.9)] overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Metallic Stealth Black & Crimson Body Gradient -->
+                            <linearGradient id="bodyPaint" x1="120" y1="80" x2="780" y2="290" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#334155"/>
+                                <stop offset="35%" stop-color="#1e293b"/>
+                                <stop offset="70%" stop-color="#0f172a"/>
+                                <stop offset="100%" stop-color="#020617"/>
+                            </linearGradient>
+
+                            <!-- Glossy Roof Dual-Tone Accent -->
+                            <linearGradient id="roofHighlight" x1="220" y1="68" x2="620" y2="120" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#64748b"/>
+                                <stop offset="50%" stop-color="#1e293b"/>
+                                <stop offset="100%" stop-color="#090d16"/>
+                            </linearGradient>
+
+                            <!-- Tinted Panoramic Glass Gradient -->
+                            <linearGradient id="windowGlass" x1="240" y1="85" x2="640" y2="170" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+                                <stop offset="45%" stop-color="#0f172a" stop-opacity="0.92"/>
+                                <stop offset="100%" stop-color="#020617" stop-opacity="0.98"/>
+                            </linearGradient>
+
+                            <!-- Headlight Beam Light Cone -->
+                            <linearGradient id="headlightBeamGrad" x1="780" y1="205" x2="1050" y2="260" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/>
+                                <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.28"/>
+                                <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+                            </linearGradient>
+
+                            <!-- Alloy Rim Gradient -->
+                            <radialGradient id="alloyGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#e2e8f0"/>
+                                <stop offset="65%" stop-color="#64748b"/>
+                                <stop offset="100%" stop-color="#1e293b"/>
+                            </radialGradient>
+
+                            <!-- Underbody Ground Shadow -->
+                            <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
+                                <stop offset="75%" stop-color="#000000" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+
+                        <!-- Ground Contact Shadow -->
+                        <ellipse cx="465" cy="336" rx="390" ry="24" fill="url(#groundShadow)"/>
+                        <!-- Subtle Red Underglow Accent -->
+                        <ellipse cx="465" cy="332" rx="310" ry="8" fill="#e31837" opacity="0.22"/>
+
+                        <!-- Projected Headlight Light Beams (Right side facing forward) -->
+                        <polygon id="beamConeMain" class="headlight-cone" points="775,188 1060,130 1060,335 765,245" fill="url(#headlightBeamGrad)"/>
+                        <polygon id="beamConeSecondary" class="headlight-cone" points="828,185 1060,150 1060,310 822,225" fill="url(#headlightBeamGrad)"/>
+
+                        <!-- SUV Main Chassis Silhouette (Mahindra XUV 3XO Muscular Stance) -->
+                        <path d="M128 242 C125 205, 134 168, 152 145 L218 82 C234 69, 255 65, 282 65 L515 65 C548 65, 578 76, 608 102 L682 156 C735 164, 795 174, 826 192 C840 202, 845 224, 842 252 C840 272, 826 286, 804 288 L152 288 C134 286, 128 268, 128 242 Z" fill="url(#bodyPaint)" stroke="#475569" stroke-width="2"/>
+
+                        <!-- Roof Rails & Dual-Tone Roofline -->
+                        <path d="M235 66 L512 66 C535 66, 558 73, 578 88 L220 88 Z" fill="url(#roofHighlight)"/>
+                        <path d="M252 62 L495 62" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+
+                        <!-- Side Greenhouse Windows -->
+                        <path d="M232 92 L505 92 C532 92, 556 102, 588 134 L625 156 L205 156 L222 106 C225 97, 228 92, 232 92 Z" fill="url(#windowGlass)" stroke="#334155" stroke-width="2"/>
+                        
+                        <!-- B-Pillar & C-Pillar Blackout Trim -->
+                        <rect x="378" y="92" width="16" height="64" fill="#090d16"/>
+                        <path d="M205 156 L228 92 L248 92 L230 156 Z" fill="#090d16"/>
+
+                        <!-- Signature XUV 3XO Red Racing Trim Line Along Side Skirt -->
+                        <path d="M275 272 L655 272" stroke="#e31837" stroke-width="4" stroke-linecap="round"/>
+
+                        <!-- Sculpted Door Creases & Shoulder Line -->
+                        <path d="M168 175 Q410 166 675 174" stroke="#64748b" stroke-width="2" opacity="0.65"/>
+                        <path d="M285 225 L635 225" stroke="#334155" stroke-width="2"/>
+                        <!-- Door Handles -->
+                        <rect x="330" y="184" width="28" height="7" rx="3.5" fill="#94a3b8"/>
+                        <rect x="468" y="184" width="28" height="7" rx="3.5" fill="#94a3b8"/>
+
+                        <!-- Side Rearview Mirror with LED Turn Strip -->
+                        <path d="M565 148 L596 138 C604 136, 610 142, 608 150 L602 162 L565 160 Z" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+                        <path d="M572 151 L603 148" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+
+                        <!-- Front Piano-Black Grille with Copper/Red Fang Accents (XUV 3XO Signature Face) -->
+                        <path d="M775 186 L834 195 C838 208, 838 228, 832 242 L772 242 Z" fill="#05080f" stroke="#334155" stroke-width="1.5"/>
+                        <!-- Grille Vertical Slats -->
+                        <g stroke="#e31837" stroke-width="2.5" stroke-linecap="round" opacity="0.9">
+                            <line x1="790" y1="195" x2="788" y2="212"/>
+                            <line x1="802" y1="196" x2="800" y2="213"/>
+                            <line x1="814" y1="198" x2="812" y2="214"/>
+                            <line x1="825" y1="200" x2="823" y2="215"/>
+                        </g>
+                        <!-- Mahindra Twin Peaks Front Emblem -->
+                        <path d="M801 218 L806 208 L811 215 L813 212 L815 215 L820 208 L825 218 H821 L818 213 L813 220 L808 213 L805 218 Z" fill="#e31837" class="emblem-glow"/>
+
+                        <!-- Lower Front Skid Plate -->
+                        <path d="M750 264 L832 264 L824 284 L742 284 Z" fill="#475569"/>
+
+                        <!-- REAR SIGNATURE INFINITY LED TAIL LIGHT -->
+                        <path id="rearLed" class="led-drl" d="M134 166 L156 166 L148 205 L130 205 Z" fill="#f43f5e"/>
+
+                        <!-- SIGNATURE XUV 3XO C-SHAPED LED DRL HEADLIGHTS (Primary & Far-Side) -->
+                        <!-- Near-side C-Shaped LED DRL -->
+                        <g id="frontLedPrimary" class="led-drl">
+                            <path d="M772 172 L738 172 C724 172, 718 184, 722 198 L732 232 C735 240, 744 244, 756 244 L770 244" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M772 172 L738 172 C724 172, 718 184, 722 198 L732 232 C735 240, 744 244, 756 244 L770 244" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Bi-LED Projector Lens -->
+                            <circle cx="755" cy="206" r="11" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2.5"/>
+                            <circle cx="755" cy="206" r="5" fill="#ffffff"/>
+                        </g>
+
+                        <!-- Far-side C-Shaped LED DRL (Peeking on front right edge) -->
+                        <g id="frontLedSecondary" class="led-drl">
+                            <path d="M826 178 L839 180 C844 182, 845 192, 843 206 L838 232 C836 238, 831 241, 825 241" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+                            <circle cx="833" cy="206" r="7" fill="#e0f2fe"/>
+                        </g>
+
+                        <!-- Muscular Cladding Wheel Arches -->
+                        <path d="M168 288 C168 228, 268 228, 268 288" stroke="#090d16" stroke-width="16" stroke-linecap="round"/>
+                        <path d="M632 288 C632 228, 732 228, 732 288" stroke="#090d16" stroke-width="16" stroke-linecap="round"/>
+
+                        <!-- REAR WHEEL ASSEMBLY -->
+                        <g id="rearWheel" class="wheel-group">
+                            <circle cx="218" cy="288" r="46" fill="#090d16" stroke="#1e293b" stroke-width="4"/>
+                            <circle cx="218" cy="288" r="32" fill="#0f172a" stroke="url(#alloyGrad)" stroke-width="4"/>
+                            <!-- Diamond-Cut Twin 5-Spoke Alloy Pattern -->
+                            <g stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round">
+                                <line x1="218" y1="258" x2="218" y2="318"/>
+                                <line x1="188" y1="288" x2="248" y2="288"/>
+                                <line x1="197" y1="267" x2="239" y2="309"/>
+                                <line x1="239" y1="267" x2="197" y2="309"/>
+                            </g>
+                            <!-- Red Brake Caliper -->
+                            <path d="M232 272 A 18 18 0 0 1 236 292" stroke="#e31837" stroke-width="5" stroke-linecap="round"/>
+                            <!-- Center Hub Cap -->
+                            <circle cx="218" cy="288" r="9" fill="#1e293b" stroke="#e31837" stroke-width="2"/>
+                        </g>
+
+                        <!-- FRONT WHEEL ASSEMBLY -->
+                        <g id="frontWheel" class="wheel-group">
+                            <circle cx="682" cy="288" r="46" fill="#090d16" stroke="#1e293b" stroke-width="4"/>
+                            <circle cx="682" cy="288" r="32" fill="#0f172a" stroke="url(#alloyGrad)" stroke-width="4"/>
+                            <!-- Diamond-Cut Twin 5-Spoke Alloy Pattern -->
+                            <g stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round">
+                                <line x1="682" y1="258" x2="682" y2="318"/>
+                                <line x1="652" y1="288" x2="712" y2="288"/>
+                                <line x1="661" y1="267" x2="703" y2="309"/>
+                                <line x1="703" y1="267" x2="661" y2="309"/>
+                            </g>
+                            <!-- Red Brake Caliper -->
+                            <path d="M696 272 A 18 18 0 0 1 700 292" stroke="#e31837" stroke-width="5" stroke-linecap="round"/>
+                            <!-- Center Hub Cap -->
+                            <circle cx="682" cy="288" r="9" fill="#1e293b" stroke="#e31837" stroke-width="2"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Showroom Floor & VIP Owner Plaque Footer -->
+    <footer class="showroom-floor relative z-20 w-full py-5 px-4 sm:px-8">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Presented Exclusively To</p>
+                <p class="font-display text-xl sm:text-2xl font-bold text-white tracking-wide">
+                    WAYNE LOCKEM <span class="text-rose-500 text-sm font-sans font-normal ml-2">• First Edition Owner</span>
+                </p>
+            </div>
+            <div class="flex items-center gap-4 text-xs text-slate-400">
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800">1.2L TGDi mStallion</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800">Adrenox Connected</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * Mahindra XUV 3XO Interactive Delivery Experience
+         * Handles vehicle entry physics, C-shaped LED light choreography,
+         * Web Speech API voice synthesis, and celebratory confetti particles.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // DOM Elements
+            const carStage = document.getElementById('carStage');
+            const carBodyIdle = document.getElementById('carBodyIdle');
+            const rearWheel = document.getElementById('rearWheel');
+            const frontWheel = document.getElementById('frontWheel');
+            const frontLedPrimary = document.getElementById('frontLedPrimary');
+            const frontLedSecondary = document.getElementById('frontLedSecondary');
+            const rearLed = document.getElementById('rearLed');
+            const beamConeMain = document.getElementById('beamConeMain');
+            const beamConeSecondary = document.getElementById('beamConeSecondary');
+            const speechCard = document.getElementById('speechCard');
+            const dialogueText = document.getElementById('dialogueText');
+            const voiceEqualizer = document.getElementById('voiceEqualizer');
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            // Control Buttons
+            const startOverlay = document.getElementById('startOverlay');
+            const startShowBtn = document.getElementById('startShowBtn');
+            const speakBtn = document.getElementById('speakBtn');
+            const flashLightsBtn = document.getElementById('flashLightsBtn');
+            const discoPartyBtn = document.getElementById('discoPartyBtn');
+            const discoBtnLabel = document.getElementById('discoBtnLabel');
+            const replaySequenceBtn = document.getElementById('replaySequenceBtn');
+            const discoContainer = document.getElementById('discoContainer');
+            const discoFloorReflection = document.getElementById('discoFloorReflection');
+
+            // Exact requested greeting message with adventures & family welcome
+            const carGreeting = "Hello Wayne Lockem! I am your brand new Mahindra XUV 3XO. Thank you for buying me, Wayne Lockem! May we have many great adventures together. Looking forward to meeting your family!";
+
+            let typewriterTimer = null;
+            let sequenceTimers = [];
+            let discoActive = false;
+            let discoPulseTimer = null;
+            let audioCtx = null;
+            let cachedAiAudioUrl = null;
+            let activeAudioElement = null;
+            let isFetchingVoice = false;
+
+            /**
+             * Lazily initializes and resumes the Web Audio API context on user interaction
+             */
+            function getAudioContext() {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContextClass) return null;
+                if (!audioCtx) {
+                    audioCtx = new AudioContextClass();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                return audioCtx;
+            }
+
+            /**
+             * Converts raw 16-bit mono PCM audio bytes into a playable WAV Blob URL
+             */
+            function pcmToWavBlobUrl(pcmBytes, sampleRate = 24000) {
+                const wavHeader = new ArrayBuffer(44);
+                const view = new DataView(wavHeader);
+                const writeString = (offset, str) => {
+                    for (let i = 0; i < str.length; i++) {
+                        view.setUint8(offset + i, str.charCodeAt(i));
+                    }
+                };
+                writeString(0, 'RIFF');
+                view.setUint32(4, 36 + pcmBytes.length, true);
+                writeString(8, 'WAVE');
+                writeString(12, 'fmt ');
+                view.setUint32(16, 16, true);
+                view.setUint16(20, 1, true); // PCM format
+                view.setUint16(22, 1, true); // Mono
+                view.setUint32(24, sampleRate, true);
+                view.setUint32(28, sampleRate * 2, true);
+                view.setUint16(32, 2, true);
+                view.setUint16(34, 16, true);
+                writeString(36, 'data');
+                view.setUint32(40, pcmBytes.length, true);
+
+                const wavBlob = new Blob([wavHeader, pcmBytes], { type: 'audio/wav' });
+                return URL.createObjectURL(wavBlob);
+            }
+
+            /**
+             * Generates and caches natural studio-quality voice audio via Gemini TTS API
+             */
+            async function fetchStudioVoiceUrl() {
+                if (cachedAiAudioUrl) return cachedAiAudioUrl;
+                if (isFetchingVoice) {
+                    // Wait briefly if a fetch is already in flight
+                    for (let i = 0; i < 30; i++) {
+                        await new Promise(r => setTimeout(r, 150));
+                        if (cachedAiAudioUrl) return cachedAiAudioUrl;
+                        if (!isFetchingVoice) break;
+                    }
+                    return cachedAiAudioUrl;
+                }
+
+                isFetchingVoice = true;
+                try {
+                    const apiKey = "";
+                    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+                    const promptText = `Say cheerfully, warmly, and proudly like an excited luxury SUV greeting its new owner: "${carGreeting}"`;
+
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: promptText }] }],
+                            generationConfig: {
+                                responseModalities: ["AUDIO"],
+                                speechConfig: {
+                                    voiceConfig: {
+                                        prebuiltVoiceConfig: { voiceName: "Sulafat" }
+                                    }
+                                }
+                            }
+                        })
+                    });
+
+                    if (!response.ok) return null;
+                    const data = await response.json();
+                    const inlineData = data?.candidates?.[0]?.content?.parts?.[0]?.inlineData;
+                    if (!inlineData?.data) return null;
+
+                    const mimeType = inlineData.mimeType || '';
+                    const rateMatch = mimeType.match(/rate=(\d+)/);
+                    const sampleRate = rateMatch ? parseInt(rateMatch[1], 10) : 24000;
+
+                    const binaryStr = atob(inlineData.data);
+                    const bytes = new Uint8Array(binaryStr.length);
+                    for (let i = 0; i < binaryStr.length; i++) {
+                        bytes[i] = binaryStr.charCodeAt(i);
+                    }
+
+                    cachedAiAudioUrl = pcmToWavBlobUrl(bytes, sampleRate);
+                    return cachedAiAudioUrl;
+                } catch (err) {
+                    return null;
+                } finally {
+                    isFetchingVoice = false;
+                }
+            }
+
+            /**
+             * Synthesizes a crisp celebratory champagne/confetti pop sound
+             */
+            function playPopSound(delaySec = 0, pitchMultiplier = 1) {
+                try {
+                    const ctx = getAudioContext();
+                    if (!ctx) return;
+
+                    const now = ctx.currentTime + delaySec;
+
+                    // 1. Pitched resonant pop transient
+                    const osc = ctx.createOscillator();
+                    const oscGain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(160 * pitchMultiplier, now);
+                    osc.frequency.exponentialRampToValueAtTime(580 * pitchMultiplier, now + 0.045);
+                    osc.frequency.exponentialRampToValueAtTime(95 * pitchMultiplier, now + 0.14);
+
+                    oscGain.gain.setValueAtTime(0.001, now);
+                    oscGain.gain.linearRampToValueAtTime(0.32, now + 0.01);
+                    oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+                    osc.connect(oscGain);
+                    oscGain.connect(ctx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.16);
+
+                    // 2. Crisp air-burst snap noise
+                    const bufferSize = Math.floor(ctx.sampleRate * 0.06);
+                    const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+                    const output = noiseBuffer.getChannelData(0);
+                    for (let i = 0; i < bufferSize; i++) {
+                        output[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.28));
+                    }
+
+                    const noise = ctx.createBufferSource();
+                    noise.buffer = noiseBuffer;
+
+                    const filter = ctx.createBiquadFilter();
+                    filter.type = 'bandpass';
+                    filter.frequency.setValueAtTime(1400 * pitchMultiplier, now);
+                    filter.Q.setValueAtTime(1.2, now);
+
+                    const noiseGain = ctx.createGain();
+                    noiseGain.gain.setValueAtTime(0.28, now);
+                    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+
+                    noise.connect(filter);
+                    filter.connect(noiseGain);
+                    noiseGain.connect(ctx.destination);
+                    noise.start(now);
+                } catch (e) {
+                    // Fail silently if browser blocks audio before gesture
+                }
+            }
+
+            /**
+             * Plays a celebratory burst of staggered party pop sounds
+             */
+            function playCelebrationPops() {
+                playPopSound(0.0, 0.95);
+                playPopSound(0.14, 1.15);
+                playPopSound(0.28, 1.05);
+                playPopSound(0.45, 1.28);
+            }
+
+            /**
+             * Toggles showroom disco lights and rhythmic LED flashing
+             */
+            function setDiscoMode(active) {
+                discoActive = active;
+                if (discoPulseTimer) {
+                    clearInterval(discoPulseTimer);
+                    discoPulseTimer = null;
+                }
+
+                if (active) {
+                    discoContainer.classList.add('active');
+                    discoFloorReflection.classList.add('active');
+                    discoBtnLabel.textContent = 'Disco: ON';
+                    discoPartyBtn.classList.add('ring-2', 'ring-fuchsia-400', 'bg-fuchsia-900/90');
+
+                    let toggle = true;
+                    discoPulseTimer = setInterval(() => {
+                        setLights(toggle);
+                        toggle = !toggle;
+                    }, 340);
+                } else {
+                    discoContainer.classList.remove('active');
+                    discoFloorReflection.classList.remove('active');
+                    discoBtnLabel.textContent = 'Disco Party';
+                    discoPartyBtn.classList.remove('ring-2', 'ring-fuchsia-400', 'bg-fuchsia-900/90');
+                    setLights(true);
+                }
+            }
+
+            /**
+             * Clears any scheduled animation timers when replaying
+             */
+            function clearSequenceTimers() {
+                sequenceTimers.forEach(id => clearTimeout(id));
+                sequenceTimers = [];
+                if (typewriterTimer) {
+                    clearInterval(typewriterTimer);
+                    typewriterTimer = null;
+                }
+            }
+
+            /**
+             * Toggles C-shaped LED DRLs, tail lights, and headlight projection beams
+             */
+            function setLights(isOn) {
+                if (isOn) {
+                    frontLedPrimary.classList.add('led-active');
+                    frontLedSecondary.classList.add('led-active');
+                    rearLed.classList.add('led-active');
+                    beamConeMain.classList.add('beam-on');
+                    beamConeSecondary.classList.add('beam-on');
+                } else {
+                    frontLedPrimary.classList.remove('led-active');
+                    frontLedSecondary.classList.remove('led-active');
+                    rearLed.classList.remove('led-active');
+                    beamConeMain.classList.remove('beam-on');
+                    beamConeSecondary.classList.remove('beam-on');
+                }
+            }
+
+            /**
+             * Signature double-flash welcome pattern on the C-shaped LED headlights
+             */
+            function flashSignatureHeadlights(callback) {
+                setLights(true);
+                sequenceTimers.push(setTimeout(() => setLights(false), 220));
+                sequenceTimers.push(setTimeout(() => setLights(true), 420));
+                sequenceTimers.push(setTimeout(() => setLights(false), 640));
+                sequenceTimers.push(setTimeout(() => {
+                    setLights(true);
+                    if (typeof callback === 'function') callback();
+                }, 860));
+            }
+
+            /**
+             * Animates the greeting text character-by-character inside the speech card
+             */
+            function runTypewriter(text) {
+                if (typewriterTimer) clearInterval(typewriterTimer);
+                dialogueText.innerHTML = '';
+                let index = 0;
+                typewriterTimer = setInterval(() => {
+                    if (index < text.length) {
+                        dialogueText.textContent += text.charAt(index);
+                        index++;
+                    } else {
+                        clearInterval(typewriterTimer);
+                        typewriterTimer = null;
+                    }
+                }, 32);
+            }
+
+            /**
+             * Speaks the greeting aloud using natural Gemini Studio TTS (with Web Speech fallback)
+             */
+            async function speakGreeting() {
+                try {
+                    if (activeAudioElement) {
+                        activeAudioElement.pause();
+                        activeAudioElement.currentTime = 0;
+                    }
+                    if ('speechSynthesis' in window) {
+                        window.speechSynthesis.cancel();
+                    }
+
+                    statusDot.className = 'w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse';
+                    statusText.textContent = "Warming Up XUV 3XO Voice...";
+
+                    const studioUrl = await fetchStudioVoiceUrl();
+
+                    // Start typewriter synchronized with voice playback
+                    runTypewriter(carGreeting);
+
+                    if (studioUrl) {
+                        const audio = new Audio(studioUrl);
+                        activeAudioElement = audio;
+
+                        audio.onplay = () => {
+                            voiceEqualizer.classList.add('speaking');
+                            statusDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping';
+                            statusText.textContent = "XUV 3XO Speaking to Wayne Lockem...";
+                        };
+
+                        audio.onended = () => {
+                            voiceEqualizer.classList.remove('speaking');
+                            statusDot.className = 'w-2.5 h-2.5 rounded-full bg-rose-500';
+                            statusText.textContent = "Delivery Complete • Ready to Drive";
+                        };
+
+                        audio.onerror = () => {
+                            speakWithBrowserFallback();
+                        };
+
+                        await audio.play();
+                        return;
+                    }
+
+                    speakWithBrowserFallback();
+                } catch (err) {
+                    speakWithBrowserFallback();
+                }
+            }
+
+            /**
+             * Browser Web Speech API fallback if offline
+             */
+            function speakWithBrowserFallback() {
+                try {
+                    if (!('speechSynthesis' in window)) {
+                        statusText.textContent = "Greeting Displayed (Audio Unsupported)";
+                        return;
+                    }
+
+                    window.speechSynthesis.cancel();
+                    const utterance = new SpeechSynthesisUtterance(carGreeting);
+                    utterance.rate = 0.94;
+                    utterance.pitch = 1.04;
+                    utterance.volume = 1.0;
+
+                    const voices = window.speechSynthesis.getVoices();
+                    const preferredVoice = voices.find(v =>
+                        v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Daniel') || v.name.includes('UK'))
+                    ) || voices.find(v => v.lang.startsWith('en'));
+
+                    if (preferredVoice) {
+                        utterance.voice = preferredVoice;
+                    }
+
+                    utterance.onstart = () => {
+                        voiceEqualizer.classList.add('speaking');
+                        statusDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping';
+                        statusText.textContent = "XUV 3XO Speaking to Wayne Lockem...";
+                    };
+
+                    utterance.onend = () => {
+                        voiceEqualizer.classList.remove('speaking');
+                        statusDot.className = 'w-2.5 h-2.5 rounded-full bg-rose-500';
+                        statusText.textContent = "Delivery Complete • Ready to Drive";
+                    };
+
+                    utterance.onerror = () => {
+                        voiceEqualizer.classList.remove('speaking');
+                        statusDot.className = 'w-2.5 h-2.5 rounded-full bg-sky-400';
+                        statusText.textContent = "Tap 'Hear Greeting Again' for Voice";
+                    };
+
+                    window.speechSynthesis.speak(utterance);
+                } catch (e) {
+                    console.warn("Fallback speech notice:", e);
+                }
+            }
+
+            /**
+             * Full Choreography: Drive-in -> Brake -> Flash C-LEDs -> Confetti -> Speak
+             */
+            function startDeliverySequence() {
+                clearSequenceTimers();
+                setDiscoMode(false);
+                if (activeAudioElement) {
+                    activeAudioElement.pause();
+                    activeAudioElement.currentTime = 0;
+                }
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                }
+
+                // Begin pre-fetching the high-quality AI voice while the car drives onto stage
+                fetchStudioVoiceUrl();
+
+                // Reset initial off-screen state
+                carStage.style.transition = 'none';
+                carStage.classList.remove('arrived');
+                carBodyIdle.classList.remove('car-body-idle');
+                speechCard.classList.remove('visible');
+                voiceEqualizer.classList.remove('speaking');
+                setLights(true); // Running lights on while driving in
+
+                statusDot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse';
+                statusText.textContent = "Incoming Delivery: Mahindra XUV 3XO...";
+
+                // Force browser reflow so CSS transition triggers reliably
+                void carStage.offsetWidth;
+
+                // Start wheel spin & drive onto center stage
+                rearWheel.classList.add('spinning');
+                frontWheel.classList.add('spinning');
+                carStage.style.transition = 'transform 2.3s cubic-bezier(0.16, 1, 0.3, 1)';
+                carStage.classList.add('arrived');
+
+                // At 2.25s: Car brakes smoothly to a halt
+                sequenceTimers.push(setTimeout(() => {
+                    rearWheel.classList.remove('spinning');
+                    frontWheel.classList.remove('spinning');
+                    carBodyIdle.classList.add('car-body-idle');
+                    statusText.textContent = "Vehicle Parked • Initializing Greeting...";
+                }, 2250));
+
+                // At 2.45s: Flash C-shaped LED headlights, trigger Disco Lights, Pop sounds & launch celebratory confetti
+                sequenceTimers.push(setTimeout(() => {
+                    flashSignatureHeadlights(() => {
+                        setDiscoMode(true);
+                        playCelebrationPops();
+                        launchConfettiBurst(130);
+                        speechCard.classList.add('visible');
+                        speakGreeting();
+                    });
+                }, 2450));
+            }
+
+            // Ensure voices are loaded asynchronously in Chromium browsers
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.onvoiceschanged = () => {
+                    window.speechSynthesis.getVoices();
+                };
+            }
+
+            // Interactive Button Listeners
+            startShowBtn.addEventListener('click', () => {
+                // Unlock audio context immediately on user gesture
+                getAudioContext();
+                playPopSound(0, 1.05);
+                startOverlay.classList.add('hidden-overlay');
+                startDeliverySequence();
+            });
+
+            speakBtn.addEventListener('click', () => {
+                playPopSound(0, 1.1);
+                flashSignatureHeadlights();
+                speakGreeting();
+            });
+
+            flashLightsBtn.addEventListener('click', () => {
+                playPopSound(0, 1.25);
+                flashSignatureHeadlights();
+                launchConfettiBurst(55);
+            });
+
+            discoPartyBtn.addEventListener('click', () => {
+                const nextState = !discoActive;
+                setDiscoMode(nextState);
+                if (nextState) {
+                    playCelebrationPops();
+                    launchConfettiBurst(95);
+                } else {
+                    playPopSound(0, 0.85);
+                }
+            });
+
+            replaySequenceBtn.addEventListener('click', () => {
+                playPopSound(0, 1.0);
+                startDeliverySequence();
+            });
+
+            /* =========================================================================
+               Celebratory Showroom Confetti & Light Sparkle Particle System (Canvas)
+               ========================================================================= */
+            const canvas = document.getElementById('confettiCanvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let animFrameId = null;
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            const brandColors = ['#e31837', '#38bdf8', '#f8fafc', '#fbbf24', '#e879f9', '#34d399'];
+
+            function launchConfettiBurst(count = 110) {
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: canvas.width * (0.2 + Math.random() * 0.6),
+                        y: canvas.height * 0.42,
+                        vx: (Math.random() - 0.5) * 14,
+                        vy: (Math.random() - 1.15) * 13,
+                        size: 5 + Math.random() * 6,
+                        color: brandColors[Math.floor(Math.random() * brandColors.length)],
+                        rotation: Math.random() * 360,
+                        rotationSpeed: (Math.random() - 0.5) * 10,
+                        gravity: 0.24,
+                        drag: 0.985,
+                        alpha: 1
+                    });
+                }
+                if (!animFrameId) {
+                    updateConfetti();
+                }
+            }
+
+            function updateConfetti() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.vx *= p.drag;
+                    p.vy = p.vy * p.drag + p.gravity;
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rotation += p.rotationSpeed;
+                    p.alpha -= 0.008;
+
+                    if (p.alpha <= 0 || p.y > canvas.height + 20) {
+                        particles.splice(i, 1);
+                        continue;
+                    }
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.globalAlpha = Math.max(0, p.alpha);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+                    ctx.restore();
+                }
+
+                if (particles.length > 0) {
+                    animFrameId = requestAnimationFrame(updateConfetti);
+                } else {
+                    animFrameId = null;
+                }
+            }
+
+            // Pre-warm the studio AI voice quietly in the background while waiting on the Play screen
+            fetchStudioVoiceUrl();
+        });
+    </script>
+</body>
+</html>
